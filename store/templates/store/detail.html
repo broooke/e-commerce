@@ -1,0 +1,32 @@
+{% extends 'basic/base.html' %}
+{% load static %}
+{%block content%}
+<style>
+    .detail{
+        box-shadow:hsl(0, 0%, 80%) 0 0 16px;
+	    background-color: #fff;
+	    border-radius: 4px;
+	    padding: 10px;
+    }
+    .image{
+        width: 100%;
+	    height: 300px;
+    }
+</style>
+<div class="container">
+        <div class="col-10 col-md-6 my-3">
+            <img src="{{ product.get_image}}" class="image">
+        </div>
+</div>
+<div class="col-10 mx-auto col-md-6 my-3">
+    <div>
+        <h1 class="product_title">{{product.name}}</h1>
+        <h5 class="text-info font-italic mb-4">${{product.price}}</h5>
+        <p class="product_desc">Product Description</p>
+        <p class="text-justify product-text">{{product.text}}</p>
+        <p class="text-justify product-text">Out Of Stock</p>
+        <a href="">Add To Cart</a>
+    </div>
+</div>
+</div>
+{%endblock%}
